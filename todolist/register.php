@@ -25,33 +25,30 @@
                     <img src="images/draw.png" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form>
+                    <form action="controllers/register_controller.php" method="post">
 
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0">Sign Up</p>
                         </div>
 
-                        <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" />
+                            <input type="email" id="form3Example3" class="form-control form-control-lg" name='email' placeholder="Enter a valid email address" />
                             <label class="form-label" for="form3Example3">Email address</label>
                         </div>
 
-                        <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
+                            <input type="password" id="form3Example4" class="form-control form-control-lg" name='password' placeholder="Enter password" />
                             <label class="form-label" for="form3Example4">Password</label>
                         </div>
 
-                        <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Enter your name" />
+                            <input type="text" id="form3Example3" class="form-control form-control-lg" name='nama' placeholder="Enter your name" />
                             <label class="form-label" for="form3Example3">Name</label>
                         </div>
 
 
                         <div class="d-grid gap-2 text-center text-lg-start mt-4 pt-2 ">
-                            <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                            <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
 
                             <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a href="login.php" class="link-primary">Login</a></p>
                         </div>
