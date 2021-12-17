@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 $page = $_GET['page'];
 $statusLogin = $_SESSION['status'];
@@ -17,13 +17,17 @@ $statusLogin = $_SESSION['status'];
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="main.css" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css">
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 	<script defer src="script.js"></script>
 </head>
 
-<body>
+<body style="min-height: 100%;">
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg" style="background-color:white; box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);">
 		<div class="container-fluid">
@@ -83,20 +87,26 @@ $statusLogin = $_SESSION['status'];
 	</nav>
 
 	<!-- header -->
-	<?php
-	switch ($page) {
-		case 'todolist':
-			include 'todolist.php';
-			break;
-		case 'home':
-			include 'home.php';
-			break;
+	<div style="min-height: 100%;">
+		<?php
+		switch ($page) {
+			case 'todolist':
+				include 'lists.php';
+				break;
+			case 'home':
+				include 'home.php';
+				break;
 
-		default:
-			include 'home.php';
-			break;
-	}
-	?>
+			case 'tasks':
+				include 'task_list.php';
+				break;
+
+			default:
+				include 'home.php';
+				break;
+		}
+		?>
+	</div>
 	<!-- footer -->
 	<footer class="text-center text-white p-5" style="background-color: black;">
 		<!-- Copyright -->
