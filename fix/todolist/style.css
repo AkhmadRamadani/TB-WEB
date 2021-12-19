@@ -1,0 +1,16 @@
+body{
+	font-family: 'roboto', sans-serif; 
+}
+.gradient-custom {
+  background: #03015d;
+  background: -webkit-linear-gradient(to right, rgba(3, 1, 93, 0.5), rgba(121, 82, 179, 0.5));
+  background: linear-gradient(to right, rgba(3, 1, 93, 0.5), rgba(121, 82, 179, 0.5))
+}
+.gradient-custom2{
+background: rgb(154,151,221);
+background: linear-gradient(90deg, rgba(154,151,221,1) 0%, rgba(3,1,93,1) 80%);
+}
+.gradient-custom3 {
+background: rgb(3,1,93);
+background: linear-gradient(90deg, rgba(3,1,93,1) 0%, rgba(76,75,126,1) 50%, rgba(130,128,227,1) 100%);
+}
