@@ -6,15 +6,12 @@
     $list_id = $_POST['list_id'];
     $list_name = $_POST['list_name'];
     $status = $_POST['status'];
+    $name = $_POST['name'];
+    $date_now = date('Y-m-d');
+    $due_date = $_POST['due_date'];
 
-    $statusChanging = 0;
-    if ($status == 'on') {
-        $statusChanging = 1;
-    }else{
-        $statusChanging = 0;
-    }
     $sql = "
-        UPDATE tasks SET task_status = '$statusChanging' WHERE task_id = '$task_id'
+        UPDATE tasks SET task_name = '$name', due_date = '$due_date' WHERE task_id = '$task_id'
     ";
 
     if (isset($task_id)) {

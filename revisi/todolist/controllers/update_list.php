@@ -4,17 +4,15 @@
     include 'koneksi.php';
 
     $name = $_POST['name'];
-    $id_user = $_SESSION['id'];
+    $list_id = $_POST['list_id'];
     $sql = "
-    INSERT INTO lists(list_name, user_id)
-    VALUES ('$name', '$id_user')
+    UPDATE lists SET list_name = '$name' WHERE list_id = '$list_id'
     ";
-    echo $sql;
 
     if (isset($name)) {
 
         if (mysqli_query($connection, $sql)) {
-            header('location:../index.php?page=todolist');
+            header("location:../index.php?page=tasks&list_id=$list_id");
         } else {
             // echo isset($jeniskelamin);
             // echo $sql;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 12, 2021 at 06:33 AM
+-- Generation Time: Dec 17, 2021 at 09:56 AM
 -- Server version: 5.7.30-0ubuntu0.18.04.1-log
 -- PHP Version: 7.4.8
 
@@ -39,9 +39,10 @@ CREATE TABLE `lists` (
 
 INSERT INTO `lists` (`list_id`, `list_name`, `user_id`) VALUES
 (1, 'tes', 0),
-(3, 'test', 1),
+(3, 'Editted List afrsfsa', 1),
 (4, 'akhmadramadani', 1),
-(5, 'Malang', 1);
+(5, 'Malang', 1),
+(6, 'Test', 1);
 
 -- --------------------------------------------------------
 
@@ -53,18 +54,24 @@ CREATE TABLE `tasks` (
   `task_id` int(11) NOT NULL,
   `task_name` varchar(256) NOT NULL,
   `task_status` int(11) NOT NULL,
-  `list_id` int(11) NOT NULL
+  `list_id` int(11) NOT NULL,
+  `date_added` date DEFAULT NULL,
+  `due_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`task_id`, `task_name`, `task_status`, `list_id`) VALUES
-(6, 'add', 1, 3),
-(8, 'yoi', 0, 6),
-(11, 'test', 0, 7),
-(12, 'Test 1', 0, 3);
+INSERT INTO `tasks` (`task_id`, `task_name`, `task_status`, `list_id`, `date_added`, `due_date`) VALUES
+(6, 'Test', 1, 3, '2021-12-01', '2021-12-30'),
+(8, 'yoi', 0, 6, NULL, NULL),
+(15, 'tstsats', 0, 5, NULL, NULL),
+(16, 'a', 0, 1, '2021-12-17', NULL),
+(18, 'Test yokk', 0, 3, '2021-12-17', NULL),
+(19, 'test', 1, 3, '2021-12-17', '2021-12-18'),
+(20, 'Test 1', 0, 3, '2021-12-17', '2022-01-05'),
+(21, 'yesgasg', 0, 4, '2021-12-17', '2021-12-24');
 
 -- --------------------------------------------------------
 
@@ -116,13 +123,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `list_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `list_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user`
